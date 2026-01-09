@@ -1,0 +1,6 @@
+vlib work
+vlog -sv -f tb_files.txt
+vsim -voptargs=+acc work.tb
+run -all 
+
+
