@@ -1,0 +1,11 @@
+vlib work 
+vlog -sv ../trivial_rotator.sv ../c_mux_2_1.sv ../rotator.sv ../twiddle_lookup.sv ../buffer.sv ../R2.sv ../fft_block.sv ../fft_tb.sv +cover -covercells
+vsim -voptargs=+acc work.fft_tb -cover
+
+add wave *
+coverage exclude -inst /work.fft_tb 
+coverage save cov.ucdb -onexit -du work.fft_tb 
+run -all
+
+
+
